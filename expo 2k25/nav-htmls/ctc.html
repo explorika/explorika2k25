@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #c2185b;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 80%;
+      min-width: 800px;
+      margin: auto;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 18px 10px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #ff797958;
+      color: #c2185b;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      table, th, td {
+        font-size: 0.99rem;
+        text-align: left;
+      }
+    }
+
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8f8;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 8% 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #b71c1c;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .main-container {
+      padding: 30px 8%;
+    }
+
+    .first-card {
+      display: flex;
+      background: #fff;
+      border: 2px solid #fffef7e8;
+      border-radius: 20px;
+      max-width: 750px;
+      margin-inline: auto;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .first-card img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #56adff;
+      margin-right: 30px;
+      transition: transform 0.3s ease-in-out; 
+    }
+    .first-card img:hover {
+  transform: scale(1.3);
+  transition: transform 0.3s ease-in-out; 
+}
+
+
+    .first-card .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .first-card .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #d32f2f;
+      margin-bottom: 10px;
+    }
+
+    .first-card .info p {
+      margin: 2px 0;
+      font-size: 1.1rem;
+      
+    }
+
+   
+    @media (max-width: 500px) {
+      .first-card {
+    
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .first-card img {
+        margin-bottom: 20px;
+        margin-right: 0;
+      }
+
+      .first-card .content {
+        align-items: center;
+        text-align: left;
+        
+      }
+      .first-card .content .info p{
+        font-size: 15px;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .dev-table-wrapper {
+      max-width: 350px;
+      width: 100%;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .dev-table-wrapper h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      color: #2c3e50;
+    }
+
+    .dev-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 15px;
+    }
+
+    .dev-table td {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 10px 12px;
+      vertical-align: middle;
+    }
+
+    .dev-table .name {
+      font-weight: 600;
+      color: #34495e;
+      width: 40%;
+    }
+
+    .dev-table .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .contact div {
+      font-size: 0.95rem;
+      color: #2d3436;
+    }
+
+    .social-icons a {
+      margin-right: 12px;
+      color: #555;
+      font-size: 1.2rem;
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #007bff;
+    }
+
+    .social-icons .fa-instagram:hover {
+      color: #d62976;
+    }
+
+    .social-icons .fa-whatsapp:hover {
+      color: #25d366;
+    }
+
+    .social-icons .fa-github:hover {
+      color: #333;
+    }
+
+    @media (max-width: 400px) {
+      .dev-table-wrapper {
+        margin: 0 auto;
+      }
+
+      .dev-table td {
+        padding: 8px;
+      }
+
+      .contact div {
+        font-size: 0.9rem;
+      }
+
+      .social-icons a {
+        font-size: 1.1rem;
+        margin-right: 10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎉 Event Coordinators</h1>
+    <p>Meet the amazing faculty and student leads managing each event at <strong>Explorika 2k25❤️‍🔥</strong>!</p>
+  </header>
+
+  <div class="main-container">
+
+    <!-- First full-row card -->
+    <div class="first-card">
+      <img src="/pics/rddy.jpg" alt="Chaitanya Reddy">
+      <div class="content">
+        <div class="title">Mr. Chaitanya Reddy</div>
+        <div class="info">
+          <p><strong>Role:</strong> Coordinator, Extra Curricular Activities & Clubs</p>
+          <p><strong>Phone:</strong> 805001687</p>
+          <p><strong>Email:</strong> Chaitanyareddy@kishkindauniversity.edu.in</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Responsive grid for all other cards -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Student Coordinator(s)</th>
+            <th>Faculty Coordinator(s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🧠 Paper presentation</td>
+            <td>Rahul M<br>+91 9876543210</td>
+            <td>Shiva kumar V<br>+91 9448906905<br><br>Shivakeshi<br>+91 96620078968</td>
+          </tr>
+          <tr>
+            <td>✍️ Essay Writing/td>
+            <td>Anjali Rao<br>+91 9811122233</td>
+            <td>Arun kumar<br>+91 9886097009<br><br>Swarna<br>+91 9663636973</td>
+          </tr>
+          <tr>
+            <td>💻 Coding/td>
+            <td>Sahil Jain<br>+91 8888777766</td>
+            <td>Poornima H<br>+91 8904569073<br><br>Farzana Begum<br>+91 9742125736</td>
+          </tr>
+          <tr>
+            <td>🧩 Quiz</td>
+            <td>Meena S<br>+91 9090909090</td>
+            <td>M Sreenivasulu<br>+91 9533860454
+              <br>
+              <!-- <br>Prof. Z Ahmed<br>+91 9443322110</td> -->
+          </tr>
+          <tr>
+            <td>🧠 Debate</td>
+            <td>Imran K<br>+91 9900112233</td>
+            <td>R G Hemalatha
+              <br>+91 9963499334
+              <!-- <br><br>Prof. R Naik<br>+91 9887766554</td> -->
+          </tr>
+          <tr>
+            <td>🎨 Drawing</td>
+            <td>Naina R<br>+91 9334433443</td>
+            <td>Anitha Jyothi
+              <br>+91 8197842512
+              <br>
+              <!-- <br>Dr. A Kapoor<br>+91 9667788990</td> -->
+          </tr>
+          <tr>
+            <td>🔥 Cook without Fire</td>
+            <td>Arjun P<br>+91 9234567890</td>
+            <td>Prathiba Shanbhog<br>+91 9019716477
+              <br>
+              <!-- <br>Prof. G Paul<br>+91 9344556677</td> -->
+          </tr>
+          <tr>
+            <td>🎨 Pot painting/td>
+            <td>Sana K<br>+91 9099887766</td>
+            <td>Rubiya Banu
+              <br>+91 6361482401
+              <br>
+              <!-- <br>Prof. M Jindal<br>+91 9112211334</td> -->
+          </tr>
+          <tr>
+            <td>🎭 Face Painting</td>
+            <td>Vikram R<br>+91 9001122330</td>
+            <td>Shravani RV
+              <br>+91 6362259595
+              <br>
+              <!-- <br>Prof. S Lal<br>+91 9223344556</td> -->
+          </tr>
+          <tr>
+            <td>🖌️ Spot painting</td>
+            <td>Pooja D<br>+91 9000099990</td>
+            <td>Shivaleela
+              <br>+91 7795610048
+              <br>
+              <!-- <br>Dr. T Singh<br>+91 9225566771</td> -->
+          </tr>
+          <tr>
+            <td>🌈 Mehendi</td>
+            <td>Aditya G<br>+91 9012345678</td>
+            <td>Jamuna Rani
+              <br>+91 8310781889
+              <br>
+              <!-- <br>Prof. M Banu<br>+91 9888777654</td> -->
+          </tr>
+          <tr>
+            <td>♻️ Best out of scrap</td>
+            <td>Ishita N<br>+91 9023445566</td>
+            <td>Prathibha N
+              <br>+91 7676274935
+              <br>
+              <!-- <br>Prof. K Rao<br>+91 9112233110</td> -->
+          </tr>
+          <tr>
+            <td>🎨 Rangoli</td>
+            <td>Karthik M<br>+91 9119988776</td>
+            <td>Sulochana P
+              <br>+91 9972455775
+              <br>
+              <!-- br>Prof. L Singh<br>+91 9345566771</td> -->
+          </tr>
+          <tr>
+            <td>📄 D0cumentary</td>
+            <td>Bhavna K<br>+91 9876612345</td>
+            <td>Hemalatha B
+              <br>+91 9844344803
+              <br>
+              <!-- <br>Prof. M Sen<br>+91 9212233444</td> -->
+          </tr>
+          <tr>
+            <td>📌 Poster design</td>
+            <td>Deepak R<br>+91 9877123456</td>
+            <td>Mobasheer
+              <br>+91 8688904729
+              <br>
+              <!-- <br>Prof. V Thomas<br>+91 9447766554</td> -->
+          </tr>
+          <tr>
+            <td>🎥 Reels Making/td>
+            <td>Simran A<br>+91 9234567123</td>
+            <td>Naseem Taj
+              <br>+91 7019448060
+              <br>
+              <!-- <br>Dr. A Rehman<br>+91 9332211444</td> -->
+          </tr>
+          <tr>
+            <td>🎭 Treasure Hunt</td>
+            <td>Manoj L<br>+91 9888777666</td>
+            <td>Zameer Ahamed
+              <br>+91 9620140911
+              <br>
+              <!-- <br>Prof. H Gupta<br>+91 9123456123</td> -->
+          </tr>
+          <tr>
+            <td>✂️ College</td>
+            <td>Rekha V<br>+91 9211345678</td>
+            <td>Mujeeb Ansari
+              <br>+91 7411535043
+              <br>
+              <!-- <br>Prof. P Khan<br>+91 9000112233</td> -->
+          </tr>
+          <tr>
+            <td>📸 Photograpy </td>
+            <td>Arav A<br>+91 9344455667</td>
+            <td>Venkatesh P
+              <br>+91 8867190268
+              <br>
+              <!-- <br>Prof. S Pandey<br>+91 9887766554</td> -->
+          </tr>
+          <tr>
+            <td>💃 Singing</td>
+            <td>Deeksha J<br>+91 9011234567</td>
+            <td>Lakshmi V
+              <br>+91 8073352929
+              <br>
+              <!-- <br>Prof. A Prasad<br>+91 9111223344</td> -->
+          </tr>
+          <tr>
+            <td>🩰 Solo Dance</td>
+            <td>Sameer H<br>+91 9119887765</td>
+            <td>Deepa T
+              <br>+91 9035873788
+              <br>
+              <!-- <br>Prof. A Batra<br>+91 9332211009</td> -->
+          </tr>
+          <tr>
+            <td>🕺 Group Dance</td>
+            <td>Tanvi M<br>+91 9345678901</td>
+            <td>
+              Geethanjali
+              <br>+91 9980756905
+              <br>
+              <!-- <br>Prof. V Iqbal<br>+91 9556677889</td> -->
+          </tr>
+          <tr>
+            <td>🕺 Mr & Miss Ethnic</td>
+            <td>Tanvi M<br>+91 9345678901</td>
+            <td>
+              Hanumanta Gouda
+              <br>+91 8660442649
+              <br>
+              <!-- <br>Prof. V Iqbal<br>+91 9556677889</td> -->
+          </tr>
+          
+        </tbody>
+      </table>
+
+
+    </div>
+
+  
+
+
+    <div class="dev-table-wrapper">
+      <h2>👨‍💻 Developers</h2>
+      <table class="dev-table">
+        <tbody>
+          <tr>
+            <td class="dev-name">Nawazuddin lS</td>
+            <td class="dev-contact">
+              <div>📞 8792451870</div>
+              <div class="dev-social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="dev-name">Vikas G</td>
+            <td class="dev-contact">
+              <div>📞 8880532080</div>
+              <div class="dev-social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="dev-name">Harsha Y</td>
+            <td class="dev-contact">
+              <div>📞 9110266840</div>
+              <div class="dev-social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="dev-name">Preetam</td>
+            <td class="dev-contact">
+              <div>📞 8310232828</div>
+              <div class="dev-social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <style>
+      .dev-table-wrapper {
+        max-width: 680px !important;
+        width: 100% !important;
+        background:#ff9b7f3d;
+        padding: 20px !important;
+        margin: 50px auto !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+        font-family: 'Segoe UI', sans-serif !important;
+      }
+    
+      .dev-table-wrapper h2 {
+        text-align: center !important;
+        font-size: 1.5rem !important;
+        margin-bottom: 20px !important;
+        color: #2c3e50 !important;
+      }
+    
+      .dev-table {
+        width: 100% !important;
+        min-width: 550px;
+        
+        border-collapse: separate !important;
+        border-spacing: 0 12px !important;
+      }
+    
+      .dev-table td {
+        background: #fff !important;
+        padding: 12px !important;
+        border-radius: 12px !important;
+        vertical-align: top !important;
+      }
+    
+      .dev-name {
+        font-weight: bold !important;
+        color: #34495e !important;
+        width: 35% !important;
+        font-size: 1rem !important;
+      }
+    
+      .dev-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        font-size: 0.95rem !important;
+        color: #2d3436 !important;
+      }
+    
+      .dev-social-icons a {
+        margin-right: 10px !important;
+        color: #636e72 !important;
+        font-size: 1.2rem !important;
+        transition: transform 0.2s ease, color 0.2s ease !important;
+      }
+    
+      .dev-social-icons a:hover {
+        transform: scale(1.25) !important;
+      }
+    
+      .dev-social-icons .fa-instagram:hover {
+        color: #d62976 !important;
+      }
+    
+      .dev-social-icons .fa-whatsapp:hover {
+        color: #25d366 !important;
+      }
+    
+      .dev-social-icons .fa-github:hover {
+        color: #333 !important;
+      }
+    
+      @media (max-width: 400px) {
+        .dev-table-wrapper {
+        margin-top: 70px !important;
+          max-width: 350px !important;
+          padding: 15px !important;
+        }
+        .dev-table{
+         min-width: 300px;
+       
+        }
+        .dev-name {
+          width: 50% !important;
+          font-size: 0.9rem !important;
+        }
+    
+        .dev-contact {
+          font-size: 0.8rem !important;
+        }
+    
+        .dev-social-icons a {
+          font-size: 1.1rem !important;
+          margin-right: 1px !important;
+        }
+      }
+    </style>
+
+    
+    
+    
+
+    
+
+</div>
+
+</body>
+</html>

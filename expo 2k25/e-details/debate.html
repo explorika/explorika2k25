@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Debate</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff9f9;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    header {
+      background-image: url('https://static.vecteezy.com/system/resources/previews/013/953/940/non_2x/banner-about-dancing-dancers-dance-latin-dances-men-and-women-at-salsa-and-bachata-competitions-vector.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .header-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #ffebee;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .header-content p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ffeef0;
+    }
+
+    .container {
+      padding: 50px 10%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .section {
+      background: white;
+      border-left: 6px solid #ff1744;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+      transition: 0.3s ease;
+    }
+
+    .section:hover {
+      box-shadow: 0 8px 25px rgba(255, 23, 69, 0.071);
+    }
+
+    .section h2 {
+      color: #c2185b;
+      margin-bottom: 12px;
+      font-size: 1.6rem;
+    }
+
+    .section ul, .section p {
+      margin-left: 18px;
+    }
+
+    .highlight {
+      color: #00897b;
+      font-weight: bold;
+    }
+
+    .register-btn-wrapper {
+  display: flex;
+  justify-content: center;
+
+}
+
+.register-btn {
+  background-color: #fe4848;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #fa2d2d;
+}
+
+    @media (max-width: 768px) {
+      .header-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .container {
+        padding: 30px 6%;
+      }
+
+      header {
+        height: 45vh;
+      }
+
+      .header-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>💃 Clash of Minds (Debate)</h1>
+      <p>Showcasing creativity, rhythm, and cultural beats on the grand Explorika stage!</p>
+    </div>
+  </header>
+
+  <section class="container">
+
+    <div class="section">
+      <h2>📖 About the Event</h2>
+      <p> A forum for intellectual confrontation, where strong arguments and sharper rebuttals determine who commands the power of speech and persuasion.</p>
+    </div>
+
+    <div class="section">
+      <h2>🕒 Schedule</h2>
+      <ul>
+        <li><span class="highlight">Date:</span> 21th April 2025</li>
+        <li><span class="highlight">Time:</span> 2:30 PM</li>
+        <li><span class="highlight">Venue:</span> SJB-2,(3rd Floor),Hackathon Lab.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>📋 Guidelines & Rules</h2>
+      <ul>
+        <li>Two teams: one For, one Against.</li>
+        <li>Each team has 2 speakers.</li>
+        <li>Time:
+          <ul>
+            <li>Opening: 3 mins</li>
+            <li>Rebuttal: 2 mins</li>
+            <li>Closing: 1 min</li>
+          </ul>
+        </li>
+        <li>Speaking order: A1 → B1 → A2 → B2 → Rebuttal & Closing.</li>
+        <li>No interruptions. Be respectful.</li>
+        <li>Use logic and facts in rebuttals.</li>
+        <li>No new points in closing.</li>
+        <li>Notes allowed, but don’t read fully.</li>
+        <li>Judging: Clarity, Argument, Rebuttal, Teamwork, Presentation.</li>
+      </ul>
+      
+      
+    </div>
+
+
+    <div class="section">
+      <h2>🎤 Faculty and Student Coordinators</h2>
+      <ul>
+        <li><b>FC </b>   R G Hemalatha</li>
+        <li><b>FC </b>  Vasantha Kumari</li>
+      </ul>
+      <br>
+      <ul>
+        <li><b>SC </b>M Soujanya : 📞 +91 9538380053</li>
+        <li><b>SC </b>Lakshmi priya : 📞 +91 7019277882 </li>
+      </ul>
+    </div>
+    <div class="register-btn-wrapper">
+      <a href="register.html" class="register-btn">Register</a>
+    </div>
+  </section>
+</body>
+</html>
